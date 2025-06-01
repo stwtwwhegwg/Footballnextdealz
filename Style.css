@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f3f3f3;
+  color: #333;
+}
+
+header {
+  background: #0a0a23;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.download {
+  padding: 2rem;
+  text-align: center;
+}
+
+.apk-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: #007bff;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.apk-button:hover {
+  background: #0056b3;
+}
+
+.news {
+  padding: 1rem 2rem;
+}
+
+article {
+  background: white;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+footer {
+  background: #0a0a23;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
