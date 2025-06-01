@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>FootballNextDealz</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>⚽ FootballNextDealz</h1>
+      <p>Die #1 Fußball-App für Transfers, News, Quiz & mehr!</p>
+    </header>
+
+    <main>
+      <section class="download">
+        <h2>📲 App herunterladen</h2>
+        <a href="https://railway.app/footballnextdealz.apk" class="apk-button">Jetzt APK downloaden</a>
+      </section>
+
+      <section class="news">
+        <h2>🗞 Aktuelle Fußball-News</h2>
+        <div id="news-container">Lade News...</div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 FootballNextDealz</p>
+    </footer>
+
+    <script>
+      async function fetchNews() {
+        try {
+          const res = await fetch("https://api.sportsdata.io/v3/soccer/scores/json/News?key=DEIN_API_KEY");
+          const data = await res.json();
+          const container = document.getElementById("news-container");
+          container.innerHTML = data
+            .slice(0, 5)
+            .map(news => \`<article><h3>\${news.Title}</h3><p>\${news.Content.slice(0, 100)}...</p></article>\`)
+            .join('');
+        } catch {
+          document.getElementById("news-container").innerText = "⚠️ News konnten nicht geladen werden.";
+        }
+      }
+
+      fetchNews();
+    </script>
+  </body>
+</html>
